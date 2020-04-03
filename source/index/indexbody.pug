@@ -1,0 +1,9 @@
+body
+    h1 !{content.title}
+    p !{content.paragraph}
+    ul
+        each listEntry in content.listEntries
+            li
+                a(href=listEntry.ref) !{listEntry.text}
+    img#le-image(width="200" height="200" src="/img/le-image.jpg")
+    p !{sharedContent.copyrightClaim}
