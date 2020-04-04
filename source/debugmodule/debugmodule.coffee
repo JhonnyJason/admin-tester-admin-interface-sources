@@ -7,6 +7,10 @@ debugmodule.initialize = () ->
 
 debugmodule.modulesToDebug = 
     unbreaker: true
-    configmodule: true
+    adminmodule: true
+    # configmodule: true
+    mustachekeysmodule: true
+    templatepreparationmodule: true
+
 
 export default debugmodule

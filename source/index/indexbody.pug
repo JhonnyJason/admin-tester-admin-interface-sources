@@ -1,10 +1,10 @@
 body
-    h1 - - - Admin Interface:
-    h1 !{content.title}
-    p !{content.paragraph}
-    ul
-        each listEntry in content.listEntries
-            li
-                a(href=listEntry.ref) !{listEntry.text}
-    img#le-image(width="200" height="200" src="/img/le-image.jpg")
-    p !{sharedContent.copyrightClaim}
+    #admin-panel
+        #preloader
+        input#secret-input(type='password')
+        #login-button.panel-button Zum Login
+        #discard-button.panel-button Verwerfen
+        #publish-button.panel-button Übernehmen
+        #show-editables-button.panel-button Editierbares Kennzeichnen
+        #message-box
+    #panel-visibility-button

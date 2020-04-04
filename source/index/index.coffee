@@ -1,14 +1,21 @@
 import Modules from "./allmodules"
+import pwaContent from "./index-pwa-content.json"
+import domconnect from "./indexdomconnect"
 
-global.allModules = Modules
+global.adminModules = Modules
+global.adminInitialized = false
 
+global.pwaContent = pwaContent
 
 window.onload = ->
+    return if global.adminInitialized
+    domconnect.initialize()
     promises = (m.initialize() for n,m of Modules)
     await Promise.all(promises)
-    appStartup()
+    global.adminInitialized = true
+    adminStartup()
 
 
-appStartup = ->
-    ## which modules shall be kickstarted?
+adminStartup = ->
+    Modules.adminmodule.start()
     return

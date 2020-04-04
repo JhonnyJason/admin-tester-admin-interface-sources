@@ -1,11 +1,11 @@
 doctype html
-html(lang=languageTag)
+html
     head
         meta(charset='utf-8')
 
-        title !{pageTitle}
+        title Your Administrative Interface
         //- Manifest^^
-        link(rel='manifest' href='data:application/manifest+json,{"name":"'+pageTitle+'", "short_name": "sample", "description": "'+pageDescription+'", "start_url":"'+pageURL+'", "background_color": "rgba(255,255,255,1)", "theme_color": "rgba(255,255,255,1)", "icons": [ { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" } ], "display": "standalone", "orientation": "portrait" }')
+        link(rel='manifest' href='data:application/manifest+json,{"name":"Your Administrative Interface", "short_name": "WebAdmin", "description": "Your personal administrative Interface - here you may edit your personal Page in WYSIWYG style.", "background_color": "rgba(255,255,255,1)", "theme_color": "rgba(255,255,255,1)", "icons": [ { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" } ], "display": "standalone", "orientation": "portrait" }')
 
         link(rel='icon' href='favicon.ico')
         link(rel='apple-touch-icon' sizes='180x180' href='img/sample-icon.png')
