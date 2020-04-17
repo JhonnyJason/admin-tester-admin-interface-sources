@@ -10,10 +10,12 @@ print = (arg) -> console.log(arg)
 #endregion
 
 ############################################################
+decamelize = require "decamelize"
+
+############################################################
 templatepreparationmodule.initialize = () ->
     log "templatepreparationmodule.initialize"
     return
-
 
 ############################################################
 prepareAllTexts = (domBody) ->
@@ -25,8 +27,7 @@ prepareAllTexts = (domBody) ->
 
 prepareTextNode = (node) ->
     log "prepareNode"
-    # cheerioNode = $(node)    
-    # if hasNoText(cheerioNode) then return
+    return unless hasText(node)
     
     children = node.children
     if children.length == 0
@@ -42,19 +43,36 @@ prepareTextNode = (node) ->
     prepareTextNode child for child in children #when !($(child).is('script'))
     return
 
-hasNoText = (cheerioNode) ->
-    text = cheerioNode.text()
+hasText = (node) ->
+    log node
+    text = node.textContent
+    log text
     if text then text = text.replace(/\s/g, '')
-    if text then return false
-    return true
+    if text then return true
+    return false
 
+############################################################
+prepareAllImages = (domBody) ->
+    log "prepareAllImages"
+    allImages = Object.keys(pwaContent.images)
+    prepareImage(image, domBody) for image in allImages
+    return
+
+prepareImage = (camelizedId, domBody) ->
+    log "prepareImage"
+    log camelizedId
+    imageId = decamelize(camelizedId, "-")
+    log imageId
+    imageElement = domBody.querySelector("#"+imageId)
+    imageElement.setAttribute("image-content-key", camelizedId)
+    return
 
 ############################################################
 templatepreparationmodule.prepareBody = (domBody) ->
     log "prepareBody"
     prepareAllTexts(domBody)
     # prepareAllLinks($,cheerioBody, content)
-    # prepareAllImages($,cheerioBody, content)
+    prepareAllImages(domBody)
     # prepareAllLists($, cheerioBody, content)
     
     return
@@ -103,22 +121,6 @@ module.exports = templatepreparationmodule
 
 # prepareObjectList = ($, cheerioBody, listKey, listObject) ->
 #     log "prepareObjectList"
-#     return
-
-# ############################################################
-# prepareAllImages = ($, cheerioBody, content) ->
-#     log "prepareAllImages"
-#     allImages = Object.keys(content.images)
-#     prepareImage($, cheerioBody, image) for image in allImages
-#     return
-
-# prepareImage = ($, cheerioBody, image) ->
-#     log "prepareImage"
-#     log image
-#     imageId = decamelize(image, "-")
-#     log imageId
-#     cheerioImage = cheerioBody.find("#"+imageId).first()
-#     cheerioImage.attr("image-content-key", image)
 #     return
 
 # ############################################################

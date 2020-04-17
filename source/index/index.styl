@@ -1,129 +1,16 @@
-/*==============================================================================
+/*==========================================================
 RESET
-==============================================================================*/
+==========================================================*/
 @import '../stylereset/reset.styl'
 
-/*==============================================================================
+/*==========================================================
 Including other components
-==============================================================================*/
+==========================================================*/
 @import '../allmodules/allstyles.styl'
-
-
-/*==============================================================================
-Admin Panel Style
-==============================================================================*/
-
-#admin-panel
-    background-color: #6a924d;
-    height: 40px;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    bottom: 0px;
-    z-index: 59999;
-    transition: margin-left 1s ease-in;
-    -webkit-transition: margin-left 1s ease-in;
-    -moz-transition: margin-left 1s ease-in;
-    -o-transition: margin-left 1s ease-in;
-    -ms-transition: margin-left 1s ease-in;
-
-#secret-input
-    display: none;
-    margin-left: 10px;
-    height: 26px;
-
-// #login-button {}
-
-#preloader
-    display: none;
-    margin-left: 10px;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    box-sizing: border-box;
-    background: linear-gradient(rgb(72, 19, 20) -50%, rgba(64, 150, 238, 0) 60%);
-    animation: roll-r 1s linear infinite;
-
-
-#discard-button
-    display: none;
-
-#publish-button
-    display: none
-
-#show-editables-button
-    display: none;
-
-#message-box
-    display: inline-block;
-    margin-left: 20px;
-    color: red;
-
-#panel-visibility-button
-    background-color: grey;
-    color: white;
-    opacity: 0.3;
-    font-size: 25px;
-    font-weight: bolder;
-    height: 40px;
-    line-height: 40px;
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    z-index: 60000;
-    cursor: pointer;
-
-.panel-button
-    display: inline-block;
-    position: relative;
-    border-radius: 0px;
-    margin-left: 7px;
-    margin-top: 5px;
-    padding: 4px;
-    background-color: #fff;
-    opacity: 1;
-    cursor: pointer;
-    -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 1);
-    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 1);
-
-.panel-button:hover
-    background: beige;
-
-.panel-button:active
-    bottom: -2px;
-    background: #9fff89;
-
-#panel-visibility-button:before
-    display: table-cell;
-    vertical-align: middle;
-    content: ">";
-    padding-left: 5px;
-    padding-right: 5px;
-
-#panel-visibility-button:active
-    right: -2px;
-
-
-/*--------------------------------------------------------------------------------------------------------------------*/
-/* logged In State styles*/
-/*--------------------------------------------------------------------------------------------------------------------*/
-
-/*--------------------------------------------------------------------------------------------------------------------*/
-/* hidden Panel State styles*/
-/*--------------------------------------------------------------------------------------------------------------------*/
-#admin-panel.hidden 
-    margin-left: 100vw;
-
-#panel-visibility-button.hidden-panel:before
-  content: "<";
-
-
+    
+/*==========================================================
+Style to move into their places
+==========================================================*/
 /*--------------------------------------------------------------------------------------------------------------------*/
 /* showing editables */
 /*--------------------------------------------------------------------------------------------------------------------*/
@@ -200,12 +87,3 @@ Admin Panel Style
 .img_edit.expanded img
     margin-bottom: 5px;
     transition: 0.4s;
-
-/*--------------------------------------------------------------------------------------------------------------------*/
-/* special effects */
-/*--------------------------------------------------------------------------------------------------------------------*/
-@keyframes roll-r
-    0%
-        transform: rotate(0deg);
-    100%
-        transform: rotate(360deg);

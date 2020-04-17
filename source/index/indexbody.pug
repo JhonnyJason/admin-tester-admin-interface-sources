@@ -1,10 +1,6 @@
 body
-    #admin-panel
-        #preloader
-        input#secret-input(type='password')
-        #login-button.panel-button Zum Login
-        #discard-button.panel-button Verwerfen
-        #publish-button.panel-button Übernehmen
-        #show-editables-button.panel-button Editierbares Kennzeichnen
-        #message-box
-    #panel-visibility-button
+    include ../adminpanelmodule/adminpanel.pug
+    //- #admin-panel
+    //-     include ../svgiconsmodule/svgicons.pug
+    //-     +admin-svg-icon("login")
+    //-     +admin-svg-icon("logout")

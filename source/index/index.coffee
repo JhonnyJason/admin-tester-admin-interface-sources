@@ -8,6 +8,7 @@ global.adminInitialized = false
 global.pwaContent = pwaContent
 
 window.onload = ->
+    console.log("Admin Index - OnLoad!")
     return if global.adminInitialized
     domconnect.initialize()
     promises = (m.initialize() for n,m of Modules)
@@ -17,5 +18,6 @@ window.onload = ->
 
 
 adminStartup = ->
+    Modules.authmodule.tokenCheck()
     Modules.adminmodule.start()
     return

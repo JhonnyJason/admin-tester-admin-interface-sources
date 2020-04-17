@@ -7,10 +7,20 @@ debugmodule.initialize = () ->
 
 debugmodule.modulesToDebug = 
     unbreaker: true
-    adminmodule: true
+    # adminmodule: true
+    # adminpanelmodule: true
+    # appstatemodule: true
+    # authmodule: true
+    bigpanelmodule: true
+    # bottompanelmodule: true
     # configmodule: true
-    mustachekeysmodule: true
-    templatepreparationmodule: true
-
+    # contenthandlermodule: true
+    imagemanagementmodule: true
+    # linkmanagementmodule: true
+    # listmanagementmodule: true
+    # mustachekeysmodule: true
+    # tabspanelmodule: true
+    # templatepreparationmodule: true
+    # uistatemodule: true
 
 export default debugmodule
